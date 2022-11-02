@@ -32,9 +32,13 @@ Designs of the MKTR EIC2 and EIC1 series are described. In both version, the aut
 Industrial robots often provide a voltage (and logic) supply of 12V or 24V. Some gripper designs that use one or more servo motors or sensors may require a couple "middle pieces" to accommodate this as such technology operates on 5V. The first piece would be a [buck converter or step-down regulator](https://www.amazon.com/gp/product/B076P4C42B/) that can take in 24V DC and output 5V. The second piece would be a 5V microcontroller that is capable of providing a PWM signal to one or more servo motors. Additionally, this microcontroller may be tasked with fetching data from one or more I2C sensors. For the purpose of MKTR EIC2, we chose the [M5StickC Plus](https://www.amazon.com/M5StickC-Plus-ESP32-PICO-Mini-Development/dp/B08VGST8LJ/) which features an ESP32 onboard. This selection was made also because the M5StickC enables to users to move the gripper using wireless control options such as GyroPalm. The GyroPalm team provides additional libraries for solutions that are tested to work with the wearable technology.
 
 ### Manual Tool Switching (v1)
+![EIC1](https://raw.githubusercontent.com/dominicklee/MKTR-EIC2-Series/master/images/EIC1.jpg)
+
 The MKTR EIC1 is the predecessor of the EIC2. The EIC1 has a quick-change mount design that involves interchangeable attachments that can be detached by removing an M3 screw of 16mm length or more. This version does not require electrical attachments between the robot and base mount. A robot attachment can be slotted into the base mount and mechanically secured by inserting an M3 set screw.
 
 ### Electromagnetic Tool Switching (v2)
+![EIC2](https://raw.githubusercontent.com/dominicklee/MKTR-EIC2-Series/master/images/EIC2.jpg)
+
 The MKTR EIC2 is the next-generation solution for affordable automatic tool-switching. The EIC2 starts with a base mount that contains an electromagnet secured flush within the mount. This electromagnet is attached to a 5V regulator that can take in voltages between 5-24V from the robot arm that it is attached to. When the robot platform provides a "high level" voltage, the electromagnet turns on and will be mechanically coupled to the gripper. Turning the pin off will released the gripper.
 
 Both the UR series and the Elephant MyCobot Pro series use M8 aviation connectors to provide auxiliary power and logic in their robot arms. However, take note that the pin mappings in each robot's respective datasheet since they are both different. This is especially important because the pin mappings are proprietary and have different logic levels. The UR series requires an M8 female connector while the Elephant MyCobot Pro series requires an M8 male connector.
